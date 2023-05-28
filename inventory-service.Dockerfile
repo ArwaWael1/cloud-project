@@ -1,5 +1,5 @@
 FROM node:latest
-WORKDIR /https://github.com/ArwaWael1/cloud-project.git
+WORKDIR /home/arwa/cloud-project
 COPY package*.json ./
 RUN npm install
 COPY . .
