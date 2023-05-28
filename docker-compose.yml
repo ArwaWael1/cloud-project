@@ -1,1 +1,42 @@
+version: '3'
 
+services:
+  api-gateway:
+    image: any-api-gateway-image
+    ports:
+      - "80:80"
+    networks:
+      - public
+
+  frontend-server:
+    image: any-frontend-server-image
+    ports:
+      - "8080:80"
+    networks:
+      - public
+
+  auth-server:
+    image: any-auth-server-image
+    ports:
+      - "3000:80"
+    networks:
+      - public
+
+  inventory-service:
+    image: any-inventory-service-image
+    networks:
+      - private
+
+  accounts-service:
+    image: any-accounts-service-image
+    networks:
+      - private
+
+  cashing-db:
+    image: any-cashing-db-image
+    networks:
+      - private
+
+networks:
+  public:
+  private:
